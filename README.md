@@ -1,3 +1,5 @@
+## Tutorial 1
+
 ## Reflection 1
 
 Beberapa standard clean code yang sudah saya terapkan:
@@ -10,6 +12,15 @@ Adapun beberapa kesalahan yang saya jumpai:
 
 ## Reflection 2
 
+https://eshop-nano141004.koyeb.app/product/list
+
 1. Setelah membuat unit test pastinya saya merasa code saya lebih reliable dalam menghadapi edge case. Jika terdapat error maka tinggal di debug, dan jika ternyata berjalan dengan baik maka tentunya perasaan saya pun menjadi tenang dan bahagia.
 Untuk dapat sepenuhnya yakin bahwa code sudah tercover oleh unit test tentunya dengan mengetahui code coverage.
-2. -
+
+
+# Tutorial 2
+
+## Reflection
+
+1. - menambahkan caption pada tag table di berkas productList.html
+2. Sudah menerapkan CI/CD, dimana untuk CI nya sudah di atur di workflow khususnya untuk ci.yml dan sonarcloud.yml, dan untuk CD nya sudah menggunakan koyeb dengan automatic deploy setiap kali dilakukan push/pull req baru.
