@@ -124,7 +124,7 @@ class OrderServiceImplTest {
         }
         assertEquals(2, results.size());
     }
-    
+
     @Test
     void testFindAllByAuthorIfAllLowercase() {
         Order order = orders.get(1);
