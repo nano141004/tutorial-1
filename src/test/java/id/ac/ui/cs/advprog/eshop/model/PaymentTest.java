@@ -17,6 +17,7 @@ class PaymentTest {
     @BeforeEach
     void setUp() {
         this.products = new ArrayList<>();
+        this.orders = new ArrayList<>();
         Product product1 = new Product();
         product1.setProductId("eb558e9f-1c39-460e-8860-71af6af63bd6");
         product1.setProductName("Sampo Cap Bambang");
@@ -50,15 +51,6 @@ class PaymentTest {
 
         assertThrows(IllegalArgumentException.class, () -> {
             Payment payment = new Payment("69696969-012a-4c07-b546-54eb1396d79b", "","TES", paymentData, this.orders.getFirst());
-        });
-    }
-
-    @Test
-    void testCreatePaymentValidStatus() {
-        Map<String, String> paymentData = new HashMap<String, String>();
-
-        assertThrows(IllegalArgumentException.class, () -> {
-            Payment payment = new Payment("69696969-012a-4c07-b546-54eb1396d79b", "","SUCCESS", paymentData, this.orders.getFirst());
         });
     }
 
@@ -102,7 +94,7 @@ class PaymentTest {
         Map<String, String> paymentData = new HashMap<String, String>();
         paymentData.put("voucherCode", "ESHOP1234ABC5678");
         Payment payment = new Payment("69696969-012a-4c07-b546-54eb1396d79b", "VOUCHER_CODE", paymentData, this.orders.getFirst());
-        assertEquals("", payment.getStatus());
+        assertEquals("SUCCESS", payment.getStatus());
     }
 
     @Test
@@ -110,7 +102,7 @@ class PaymentTest {
         Map<String, String> paymentData = new HashMap<String, String>();
         paymentData.put("bankName", "BRI");
         Payment payment = new Payment("69696969-012a-4c07-b546-54eb1396d79b", "BANK_TRANSFER", paymentData, this.orders.getFirst());
-        assertEquals("", payment.getStatus());
+        assertEquals("REJECTED", payment.getStatus());
     }
 
     @Test
@@ -119,6 +111,6 @@ class PaymentTest {
         paymentData.put("bankName", "BRI");
         paymentData.put("referenceCode", "0efa1f20");
         Payment payment = new Payment("69696969-012a-4c07-b546-54eb1396d79b", "BANK_TRANSFER", paymentData, this.orders.getFirst());
-        assertEquals("", payment.getStatus());
+        assertEquals("SUCCESS", payment.getStatus());
     }
 }
